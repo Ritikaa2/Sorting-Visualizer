@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link rel="icon" type="image/jpeg" href="./logoo.jpg">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<header>
+    <nav class="sidebar">
+        <h2>Controls</h2>
+
+        <label>Array Size:</label>
+        <input id="a_size" type="range" min="10" max="200" step="1" value="80" />
+
+        <label>Speed:</label>
+        <input id="a_speed" type="range" min="1" max="5" step="1" value="4" />
+
+        <label>Array Type:</label>
+        <select id="array_type">
+            <option value="random">Random</option>
+            <option value="sorted">Sorted</option>
+            <option value="reverse">Reverse Sorted</option>
+            <option value="almost_sorted">Almost Sorted</option>
+        </select>
+
+        <label>Algorithm:</label>
+        <select id="algo_select">
+            <option value="bubble">Bubble Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="quick">Quick Sort</option>
+            <option value="heap">Heap Sort</option>
+        </select>
+
+        <button id="a_generate">Generate Array</button>
+        <button id="start_sort">Start Sorting</button>
+        <button id="theme_toggle"> Dark Mode</button>
+
+        <!-- Color Legend -->
+        <div class="color-legend">
+            <h3>Color Legend</h3>
+            <div class="legend-item">
+                <span class="legend-color red"></span>
+                <span>Currently Comparing</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color blue"></span>
+                <span>Unsorted</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color green"></span>
+                <span>Sorted</span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<main>
+    <section id="visualizer">
+        <div id="array_container"></div>
+    </section>
+
+    <section id="info_panels">
+        <div id="Info_Cont1">
+            <h3>TIME COMPLEXITY</h3>
+            <div class="Complexity_Containers">
+                <div class="Pair_Definitions">
+                    <p class="Sub_Heading">Worst case:</p>
+                    <p id="Time_Worst"></p>
+                </div>
+                <div class="Pair_Definitions">
+                    <p class="Sub_Heading">Average case:</p>
+                    <p id="Time_Average"></p>
+                </div>
+                <div class="Pair_Definitions">
+                    <p class="Sub_Heading">Best case:</p>
+                    <p id="Time_Best"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="Info_Cont2">
+            <h3>SPACE COMPLEXITY</h3>
+            <div class="Complexity_Containers">
+                <div class="Pair_Definitions">
+                    <p class="Sub_Heading">Worst case:</p>
+                    <p id="Space_Worst"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="extra_info">
+            <div id="stats">
+                <h3>Live Stats</h3>
+                <p>Comparisons: <span id="comparison_count">0</span></p>
+                <p>Swaps: <span id="swap_count">0</span></p>
+            </div>
+
+            <div id="algo_info">
+                <h3>Algorithm Info</h3>
+                <p id="algo_description">Select an algorithm to see details.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Scripts -->
+<script src="./scripts/main.js"></script>
+<script src="./scripts/visualizations.js"></script>
+<script src="./scripts/bubble_sort.js"></script>
+<script src="./scripts/selection_sort.js"></script>
+<script src="./scripts/insertion_sort.js"></script>
+<script src="./scripts/merge_sort.js"></script>
+<script src="./scripts/quick_sort.js"></script>
+<script src="./scripts/heap_sort.js"></script>
+<script src="./scripts/extra_features.js"></script>
+</body>
+</html>
